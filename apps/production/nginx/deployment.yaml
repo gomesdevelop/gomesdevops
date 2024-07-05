@@ -29,24 +29,3 @@ spec:
   ports:
   - port: 80
     targetPort: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: nginx-ingress
-  labels:
-    name: nginx
-  namespace: production
-spec:
-  rules:
-  - host: gomes.dev
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: nginx-service
-            port: 
-              number: 80
-
