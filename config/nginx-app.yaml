@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nignx
+  namespace: production
+spec:
+  selector:
+    matchLabels:
+      app: nignx
+  template:
+    metadata:
+      labels:
+        app: nignx
+    spec:
+      containers:
+      - name: nignx
+        image: nginx
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: production
+spec:
+  selector:
+    app: nignx
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  labels:
+    name: nginx
+  namespace: production
+spec:
+  rules:
+  - host: gomes.dev
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nginx-service
+            port: 
+              number: 80
+
