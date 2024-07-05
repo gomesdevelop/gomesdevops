@@ -23,7 +23,7 @@ spec:
             datasources:
               - name: Prometheus
                 type: prometheus
-                url: http://prometheus-server
+                url: http://prometheus.142.132.246.85.nip.io
                 access: proxy
                 isDefault: true
         dashboardProviders:
