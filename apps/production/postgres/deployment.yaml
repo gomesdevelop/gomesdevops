@@ -45,6 +45,7 @@ spec:
     metadata:
       labels:
         app: postgres
+      namespace: production
     spec:
       containers:
         - name: postgres
