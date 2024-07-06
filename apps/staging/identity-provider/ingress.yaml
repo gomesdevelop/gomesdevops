@@ -12,19 +12,20 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     ngninx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
-  tls:
-  - hosts:
-    - identity.staging.plussoftware.com.br
-    secretName: letsencrypt-staging-tls
-  rules:
-  - host: identity.staging.plussoftware.com.br
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: identity-provider-service
-            port:
-              number: 8080
+  defaultBackend: 
+    ingressClassName: nginx
+    tls:
+    - hosts:
+      - identity.staging.plussoftware.com.br
+      secretName: letsencrypt-staging-tls
+    rules:
+    - host: identity.staging.plussoftware.com.br
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: identity-provider-svc
+              port:
+                number: 8080
