@@ -7,25 +7,22 @@ metadata:
     name: identity-provider
   annotations:
     cert-manager.io/issuer: "letsencrypt-staging"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     ngninx.ingress.kubernetes.io/rewrite-target: /
 spec:
   defaultBackend: 
     ingressClassName: nginx
     tls:
     - hosts:
-      - identity.staging.plussoftware.com.br
+      - api.staging.plussoftware.com.br
       secretName: letsencrypt-staging-tls
     rules:
-    - host: identity.staging.plussoftware.com.br
+    - host: api.staging.plussoftware.com.br
       http:
         paths:
-        - path: /
+        - path: /auth
           pathType: Prefix
           backend:
             service:
-              name: identity-provider-svc
+              name: identity-svc
               port:
                 number: 8080
