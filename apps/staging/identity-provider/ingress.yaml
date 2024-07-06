@@ -7,6 +7,10 @@ metadata:
     name: identity-provider
   annotations:
     cert-manager.io/issuer: "letsencrypt-staging"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    ngninx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   tls:
@@ -23,4 +27,4 @@ spec:
           service:
             name: identity-provider-service
             port:
-              number: 80
+              number: 8080
