@@ -27,6 +27,6 @@ spec:
   tls:
   - hosts:
     - staging.gomes.dev
-    secretName: letsencrypt-staging # as expected by argocd-server
+    secretName: letsencrypt-staging-key # as expected by argocd-server
 
 
