@@ -23,7 +23,7 @@ spec:
             datasources:
               - name: Prometheus
                 type: prometheus
-                url: https://prometheus.plussoftware.com.br
+                url: http://prometheus.plussoftware.com.br
                 access: proxy
                 isDefault: true
         dashboardProviders:
