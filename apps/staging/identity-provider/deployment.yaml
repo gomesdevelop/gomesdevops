@@ -30,5 +30,5 @@ spec:
   selector:
     app: identity-provider
   ports:
-  - port: 8082
-    targetPort: 80
+  - port: 80
+    targetPort: 8082
