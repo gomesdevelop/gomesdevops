@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: staging-identity-provider
+  name: staging-identity
   namespace: argocd
 spec:
   project: default
