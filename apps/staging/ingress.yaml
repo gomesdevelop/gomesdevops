@@ -22,7 +22,7 @@ spec:
           service:
             name: identity-svc
             port:
-              number: 8080
+              number: 8082
       - path: /
         pathType: Prefix
         backend:
