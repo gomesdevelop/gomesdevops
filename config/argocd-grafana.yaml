@@ -38,6 +38,12 @@ spec:
                 editable: true
                 options:
                   path: /var/lib/grafana/dashboards/default
+        dashboards:
+          default:
+            argocd-dash:
+              gnetId: 14584  # Install the following Grafana dashboard in the
+              revision: 1   # instance: https://grafana.com/dashboards/7424
+              datasource: Prometheus
         ingress:
           enabled: true
           annotations:
