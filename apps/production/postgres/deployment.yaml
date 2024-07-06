@@ -14,6 +14,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
+    type: DirectoryOrCreate
     path: /data/postgresql
 ---
 apiVersion: v1
