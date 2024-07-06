@@ -12,7 +12,7 @@ spec:
   tls:
   - hosts:
     - plussoftware.com.br
-    secretName: production-tls
+    secretName: letsencrypt-production-tls
   rules:
   - host: plussoftware.com.br
     http:

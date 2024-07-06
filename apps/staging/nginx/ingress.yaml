@@ -12,7 +12,7 @@ spec:
   tls:
   - hosts:
     - staging.plussoftware.com.br
-    secretName: staging-tls
+    secretName: letsencrypt-staging-tls
   rules:
   - host: staging.plussoftware.com.br
     http:
