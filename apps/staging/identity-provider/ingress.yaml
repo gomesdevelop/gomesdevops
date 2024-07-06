@@ -26,5 +26,3 @@ spec:
         backend:
           service:
             name: identity-provider-service
-            port:
-              number: 8080
