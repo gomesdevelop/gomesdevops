@@ -29,7 +29,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: argocd.142.132.246.85.nip.io
+  - host: argocd.plussoftware.com.br
     http:
       paths:
       - path: /
@@ -41,5 +41,5 @@ spec:
               name: https
   tls:
   - hosts:
-    - argocd.142.132.246.85.nip.io
+    - argocd.plussoftware.com.br
     secretName: letsencrypt-argocd # as expected by argocd-server
