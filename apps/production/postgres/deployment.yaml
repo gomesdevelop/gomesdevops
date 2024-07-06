@@ -32,7 +32,7 @@ spec:
       containers:
       - envFrom:
         - secretRef:
-            name: postgres-secret
+            name: postgres-env
         image: docker.io/postgres:14
         name: postgresql
         ports:
