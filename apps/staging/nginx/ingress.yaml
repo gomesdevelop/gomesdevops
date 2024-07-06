@@ -11,10 +11,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - staging.gomes.dev
+    - staging.plussoftware.com.br
     secretName: staging-tls
   rules:
-  - host: staging.gomes.dev
+  - host: staging.plussoftware.com.br
     http:
       paths:
       - path: /

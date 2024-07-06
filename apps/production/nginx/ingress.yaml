@@ -11,10 +11,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - gomes.dev
+    - plussoftware.com.br
     secretName: production-tls
   rules:
-  - host: gomes.dev
+  - host: plussoftware.com.br
     http:
       paths:
       - path: /
