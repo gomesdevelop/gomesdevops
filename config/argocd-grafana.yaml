@@ -38,17 +38,14 @@ spec:
                 editable: true
                 options:
                   path: /var/lib/grafana/dashboards/default
-        dashboards:
-          default:
-            kong-dash:
-              gnetId: 7424  # Install the following Grafana dashboard in the
-              revision: 7   # instance: https://grafana.com/dashboards/7424
-              datasource: Prometheus
         ingress:
           enabled: true
-          ingressClassName: nginx
+          annotations:
+            kubernetes.io/ingress.class: "nginx"
+            nginx.ingress.kubernetes.io/rewrite-target: /$1
+            nginx.ingress.kubernetes.io/use-regex: "true"
           hosts:
-            - "grafana.plussoftware.com.br"
+            - grafana.plussoftware.com.br
         grafana.ini:
           server:
             domain: grafana.plussoftware.com.br
