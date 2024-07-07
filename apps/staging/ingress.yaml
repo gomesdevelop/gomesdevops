@@ -43,5 +43,5 @@ spec:
               number: 80
   tls:
   - hosts:
-    - *.plussoftware.com.br
+    - "*.plussoftware.com.br"
     secretName: staging-letsencrypt-cert
