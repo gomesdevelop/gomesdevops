@@ -43,6 +43,5 @@ spec:
               number: 80
   tls:
   - hosts:
-    - staging.plussoftware.com.br
-    - api.staging.plussoftware.com.br
+    - *.plussoftware.com.br
     secretName: staging-letsencrypt-cert
