@@ -4,7 +4,6 @@ metadata:
   name: staging-ingress
   namespace: staging
   annotations:
-    kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: "staging-letsencrypt"
 spec:
   ingressClassName: nginx
@@ -45,5 +44,8 @@ spec:
               number: 80
   tls:
   - hosts:
-    - "*.kub3.dev"
-    secretName: letsencrypt-cert
+    - "staging.kub3.dev"
+    secretName: app-letsencrypt-cert
+  - hosts:
+    - "api.staging.kub3.dev"
+    secretName: api-letsencrypt-cert
