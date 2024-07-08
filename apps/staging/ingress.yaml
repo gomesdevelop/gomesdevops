@@ -6,6 +6,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "staging-letsencrypt"
 spec:
+  tls:
+  - hosts:
+    - "staging.kub3.dev"
+    secretName: app-letsencrypt-cert
+  - hosts:
+    - "api.staging.kub3.dev"
+    secretName: api-letsencrypt-cert
   ingressClassName: nginx
   rules:
   - host: staging.kub3.dev
@@ -42,10 +49,3 @@ spec:
             name: nginx-service
             port:
               number: 80
-  tls:
-  - hosts:
-    - "staging.kub3.dev"
-    secretName: app-letsencrypt-cert
-  - hosts:
-    - "api.staging.kub3.dev"
-    secretName: api-letsencrypt-cert

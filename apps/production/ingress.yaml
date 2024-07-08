@@ -6,6 +6,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "production-letsencrypt"
 spec:
+  tls:
+  - hosts:
+    - "kub3.dev"
+    secretName: app-letsencrypt-cert
+  - hosts:
+    - "api.kub3.dev"
+    secretName: api-letsencrypt-cert
   ingressClassName: nginx
   rules:
   - host: kub3.dev
@@ -18,7 +25,13 @@ spec:
             name: nginx-service
             port:
               number: 80
-  tls:
-  - hosts:
-    - "kub3.dev"
-    secretName: app-letsencrypt-cert
+  - host: api.kub3.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 80
