@@ -1,8 +1,7 @@
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-  name: letsencrypt-production
-  namespace: production
+  name: production-letsencrypt
 spec:
   acme:
     # The ACME server URL
@@ -11,7 +10,7 @@ spec:
     email: cleber@kub3.dev
     # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
-      name: letsencrypt-production-key
+      name: production-letsencrypt-key
     # Enable the HTTP-01 challenge provider
     solvers:
       - http01:
