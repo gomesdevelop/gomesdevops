@@ -4,7 +4,7 @@ metadata:
   name: staging-ingress
   namespace: staging
   annotations:
-    cert-manager.io/issuer: "letsencrypt-staging"
+    cert-manager.io/issuer: "staging-letsencrypt"
 spec:
   ingressClassName: nginx
   rules:
