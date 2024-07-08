@@ -6,14 +6,14 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "production-letsencrypt"
 spec:
+  ingressClassName: nginx
   tls:
   - hosts:
     - "gomes.dev"
-    secretName: app-letsencrypt-cert
+    secretName: app-letsencrypt-tls
   - hosts:
     - "api.gomes.dev"
-    secretName: api-letsencrypt-cert
-  ingressClassName: nginx
+    secretName: api-letsencrypt-tls
   rules:
   - host: gomes.dev
     http:
