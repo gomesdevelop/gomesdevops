@@ -44,8 +44,5 @@ spec:
               number: 80
   tls:
   - hosts:
-    - "staging.kub3.dev"
-    secretName: app-letsencrypt-cert
-  - hosts:
-    - "api.staging.kub3.dev"
-    secretName: api-letsencrypt-cert
+    - "*.kub3.dev"
+    secretName: letsencrypt-cert
