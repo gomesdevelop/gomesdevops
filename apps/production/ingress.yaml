@@ -8,14 +8,14 @@ metadata:
 spec:
   tls:
   - hosts:
-    - "kub3.dev"
+    - "gomes.dev"
     secretName: app-letsencrypt-cert
   - hosts:
-    - "api.kub3.dev"
+    - "api.gomes.dev"
     secretName: api-letsencrypt-cert
   ingressClassName: nginx
   rules:
-  - host: kub3.dev
+  - host: gomes.dev
     http:
       paths:
       - path: /
@@ -25,7 +25,7 @@ spec:
             name: nginx-service
             port:
               number: 80
-  - host: api.kub3.dev
+  - host: api.gomes.dev
     http:
       paths:
       - path: /

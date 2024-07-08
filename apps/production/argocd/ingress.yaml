@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: argocd.kub3.dev
+  - host: argocd.gomes.dev
     http:
       paths:
       - path: /
@@ -20,5 +20,5 @@ spec:
               name: https
   tls:
   - hosts:
-    - "argocd.kub3.dev"
+    - "argocd.gomes.dev"
     secretName: argocd-letsencrypt-cert
