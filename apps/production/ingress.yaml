@@ -2,36 +2,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: production-ingress
-  namespace: production
-  annotations:
-    cert-manager.io/cluster-issuer: "production-letsencrypt"
 spec:
-  ingressClassName: nginx
-  tls:
-  - hosts:
-    - "gomes.dev"
-    secretName: app-letsencrypt-tls
-  - hosts:
-    - "api.gomes.dev"
-    secretName: api-letsencrypt-tls
   rules:
-  - host: gomes.dev
+  - host: kub3.dev
     http:
       paths:
-      - path: /
-        pathType: Prefix
+      - pathType: Prefix
+        path: "/"
         backend:
           service:
-            name: nginx-service
-            port:
-              number: 80
-  - host: api.gomes.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nginx-service
-            port:
+            name: nginx-svc
+            port: 
               number: 80
