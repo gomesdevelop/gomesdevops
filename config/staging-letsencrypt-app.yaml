@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: staging-certificate
+  name: staging-letsencrypt
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/gomesdevelop/gomesdevops.git
     targetRevision: HEAD
-    path: apps/staging/certificate
+    path: apps/staging/letsencrypt
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
