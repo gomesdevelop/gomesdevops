@@ -18,7 +18,7 @@ spec:
             enabled: true
             ingressClassName: nginx
             hosts:
-            - prometheus.gomes.dev
+            - prometheus.kub3.dev
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring

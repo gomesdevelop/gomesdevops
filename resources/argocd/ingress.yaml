@@ -6,7 +6,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: cleber@gomes.dev
+    email: cleber@kub3.dev
     privateKeySecretRef:
       name: letsencrypt-argocd
     solvers:
@@ -29,7 +29,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: argocd.gomes.dev
+  - host: argocd.kub3.dev
     http:
       paths:
       - path: /
@@ -41,5 +41,5 @@ spec:
               name: https
   tls:
   - hosts:
-    - argocd.gomes.dev
+    - argocd.kub3.dev
     secretName: letsencrypt-argocd # as expected by argocd-server
