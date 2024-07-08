@@ -44,6 +44,7 @@ spec:
               number: 80
   tls:
   - hosts:
-    - "plussoftware.com.br"
+    - "staging.plussoftware.com.br"
+    - "api.staging.plussoftware.com.br"
     secretName: staging-letsencrypt-cert
     wilchcard: true
