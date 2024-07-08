@@ -45,7 +45,7 @@ spec:
   tls:
   - hosts:
     - "staging.plussoftware.com.br"
-    secretName: staging-letsencrypt-cert
+    secretName: app-letsencrypt-cert
   - hosts:
     - "api.staging.plussoftware.com.br"
-    secretName: api-staging-letsencrypt-cert
+    secretName: api-letsencrypt-cert
