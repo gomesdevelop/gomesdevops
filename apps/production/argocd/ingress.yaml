@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   name: production-ingress
   namespace: argocd
-  annotations:
-    cert-manager.io/cluster-issuer: "production-letsencrypt"
+  # annotations:
+  #   cert-manager.io/cluster-issuer: "production-letsencrypt"
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - "argocd.gomes.dev"
-    secretName: argocd-letsencrypt-tls
+  # tls:
+  # - hosts:
+  #   - "argocd.gomes.dev"
+  #   secretName: argocd-letsencrypt-tls
   rules:
   - host: argocd.gomes.dev
     http:
