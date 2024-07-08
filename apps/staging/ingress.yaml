@@ -5,7 +5,8 @@ metadata:
   namespace: staging
   annotations:
     cert-manager.io/issuer: "letsencrypt-staging"
-    use-proxy-protocol: "true"
+    cert-manager.io/issue-temporary-certificate: "true"
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   ingressClassName: nginx
   rules:
