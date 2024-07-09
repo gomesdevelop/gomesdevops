@@ -1,24 +1,26 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: production-hosts
-  namespace: production
+  name: rancher
+  labels:
+    name: rancher
+  namespace: cattle-system
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: traefik
   tls:
   - hosts:
-    - "kub3.dev"
-    secretName: app-letsencrypt-cert
+    - "rancher.kub3.dev"
+    secretName: rancher-letsencrypt-cert
   rules:
-  - host: kub3.dev
+  - host: rancher.kub3.dev
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: nginx-svc
+            name: rancher-server
             port: 
-              number: 80
+              name: https
