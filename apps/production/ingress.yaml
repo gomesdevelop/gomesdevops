@@ -11,7 +11,20 @@ spec:
   - hosts:
     - "kub3.dev"
     secretName: app-letsencrypt-cert
+  - hosts:
+    - "api.kub3.dev"
+    secretName: api-letsencrypt-cert
   rules:
+  - host: api.kub3.dev
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nginx-svc
+            port: 
+              number: 80
   - host: kub3.dev
     http:
       paths:
